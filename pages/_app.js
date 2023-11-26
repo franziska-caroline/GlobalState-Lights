@@ -30,6 +30,15 @@ export default function App({ Component, pageProps }) {
     );
   }
 
+  // Quick Actions
+  function handleLightsOff() {
+    setLights(lights.map((light) => ({ ...light, isOn: false })));
+  }
+
+  function handleLightsOn() {
+    setLights(lights.map((light) => ({ ...light, isOn: true })));
+  }
+
   return (
     <Layout>
       <GlobalStyle />
@@ -38,6 +47,8 @@ export default function App({ Component, pageProps }) {
         lights={lights}
         handleToggleLight={handleToggleLight}
         countedLights={countedLights}
+        handleLightsOff={handleLightsOff}
+        handleLightsOn={handleLightsOn}
       />
     </Layout>
   );
